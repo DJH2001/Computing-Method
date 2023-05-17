@@ -1,0 +1,25 @@
+syms y x x0 x1 x2 x3;
+x3=input('请输入x的值: ');
+x0=input('请输入x0的值: ');
+x1=input('请输入x1的值: ');
+x2=input('请输入x2的值: ');
+y=0.0;
+f=x^0.5;
+l=1.0;
+l=l*(x3-x1)/(x0-x1);
+l=l*(x3-x2)/(x0-x2);
+yk=double(subs(f,'x',x0));
+y=y+l*yk;
+l=1.0;
+l=l*(x3-x0)/(x1-x0);
+l=l*(x3-x2)/(x1-x2);
+yk=double(subs(f,'x',x1));
+y=y+l*yk;
+l=1.0;
+l=l*(x3-x0)/(x2-x0);
+l=l*(x3-x1)/(x2-x1);
+yk=double(subs(f,'x',x2));
+y=y+l*yk;
+fprintf('x=%.10f',x3);
+fprintf('y=%.10f',y);
+
